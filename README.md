@@ -16,7 +16,8 @@ from AtsushiSakai/PythonRobotics onlytailei/CppRobotics and AtsushiSakai/MATLABR
          * [Dijkstra algorithm](#dijkstra-algorithm)
          * [A* algorithm](#a-algorithm)
    * [Path Tracking](#path-tracking)
-      * [Linear–quadratic regulator (LQR) speed and steering control](#linearquadratic-regulator-lqr-speed-and-steering-control)
+      * [PID](#pid)
+      
 # What is this?
 
 This is a code collection of robotics algorithms in Python C++ and Matlab, especially for autonomous navigation.
@@ -123,15 +124,5 @@ In the animation, cyan points are searched nodes.
 Its heuristic is 2D Euclid distance.
 
 # Path Tracking
-
-## Linear–quadratic regulator (LQR) speed and steering control
-
-Path tracking simulation with LQR speed and steering control.
-
-![3](https://github.com/AtsushiSakai/PythonRoboticsGifs/raw/master/PathTracking/lqr_speed_steer_control/animation.gif)
-
-Ref:
-
-- [Towards fully autonomous driving: Systems and algorithms \- IEEE Conference Publication](http://ieeexplore.ieee.org/document/5940562/)
 
 ## PID
