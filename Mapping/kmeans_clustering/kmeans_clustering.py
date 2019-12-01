@@ -6,7 +6,7 @@ author: Atsushi Sakai (@Atsushi_twi)
 
 """
 
-import numpy as np
+import numpy as np # matrix multiplication
 import math
 import matplotlib.pyplot as plt
 import random
@@ -17,11 +17,11 @@ show_animation = True
 class Clusters:
 
     def __init__(self, x, y, nlabel):
-        self.x = x
-        self.y = y
-        self.ndata = len(self.x)
-        self.nlabel = nlabel
-        self.labels = [random.randint(0, nlabel - 1)
+        self.x = x # data in x
+        self.y = y # data in y
+        self.ndata = len(self.x) # number of data
+        self.nlabel = nlabel # number of clusters
+        self.labels = [random.randint(0, nlabel - 1) 
                        for _ in range(self.ndata)]
         self.cx = [0.0 for _ in range(nlabel)]
         self.cy = [0.0 for _ in range(nlabel)]
@@ -32,10 +32,10 @@ def kmeans_clustering(rx, ry, nc):
     clusters = Clusters(rx, ry, nc)
     clusters = calc_centroid(clusters)
 
-    MAX_LOOP = 10
-    DCOST_TH = 0.1
-    pcost = 100.0
-    for loop in range(MAX_LOOP):
+    MAX_LOOP = 10 #
+    DCOST_TH = 0.1 # 
+    pcost = 100.0 # 
+    for loop in range(MAX_LOOP): 
         #  print("Loop:", loop)
         clusters, cost = update_clusters(clusters)
         clusters = calc_centroid(clusters)
@@ -139,23 +139,23 @@ def calc_association(cx, cy, clusters):
 
 
 def main():
-    print(__file__ + " start!!")
+    print(__file__ + " start!!") # starting this script
 
-    cx = [0.0, 8.0]
-    cy = [0.0, 8.0]
-    npoints = 10
-    rand_d = 3.0
-    ncluster = 2
-    sim_time = 15.0
-    dt = 1.0
-    time = 0.0
+    cx = [0.0, 8.0] # centroid point x cordinate
+    cy = [0.0, 8.0] # centroid point y cordinate
+    npoints = 10 #  num of point for cluster
+    rand_d = 3.0 # max random distance
+    ncluster = 2 # how many cluster
+    sim_time = 15.0 # simulation timelimit
+    dt = 1.0 # time step
+    time = 0.0 # starting time
 
     while time <= sim_time:
         print("Time:", time)
         time += dt
 
         # simulate objects
-        cx, cy = update_positions(cx, cy)
+        cx, cy = update_positions(cx, cy) #
         rx, ry = calc_raw_data(cx, cy, npoints, rand_d)
 
         clusters = kmeans_clustering(rx, ry, ncluster)
